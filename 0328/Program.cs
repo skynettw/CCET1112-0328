@@ -53,12 +53,28 @@ namespace _0328
             Score  = Convert.ToInt32(Console.ReadLine());
             while(Score>=0)
             {
-                Scores[Count++] = Score;
-                Console.Write("score=");
-                Score = Convert.ToInt32(Console.ReadLine());
+                if (Count < MAX_NUM)
+                {
+                    Scores[Count++] = Score;
+                    Console.Write("score=");
+                    Score = Convert.ToInt32(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("你輸入的個數太多了。");
+                    break;
+                }
+                
             }
 
             // 請寫一段程式碼列出剛剛使用者輸入的所有數字
+            for(int i=0; i<Count; i++)
+            {
+                Console.Write($"{Scores[i]} ");
+            }
+            Console.WriteLine();
+            // 0328作業A要求：完成這個程式，可以用Array的方法函式以及其它計算，
+            // 求：總和、平均值、最大值、最小值、中位數、標準差等等 
             
 
         }
